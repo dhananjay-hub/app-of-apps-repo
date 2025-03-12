@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-guestbook
+spec:
+  destination:
+    namespace: guestbook
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/yourusername/kustomize-guestbook.git
+    targetRevision: HEAD
+    path: manifests
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
