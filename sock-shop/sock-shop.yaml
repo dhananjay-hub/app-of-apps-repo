@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sock-shop
+spec:
+  destination:
+    namespace: sock-shop
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/yourusername/sock-shop.git
+    targetRevision: HEAD
+    path: manifests
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
