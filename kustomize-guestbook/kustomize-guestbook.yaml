@@ -7,7 +7,7 @@ spec:
     namespace: guestbook
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/yourusername/kustomize-guestbook.git
+    repoURL: https://github.com/dhananjay-hub/kustomize-guestbook.git
     targetRevision: HEAD
     path: manifests
   syncPolicy:
