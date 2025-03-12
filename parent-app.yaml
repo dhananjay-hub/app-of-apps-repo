@@ -3,11 +3,12 @@ kind: Application
 metadata:
   name: app-of-apps
 spec:
+  project: default  # Add the project field here
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/yourusername/app-of-apps-repo.git
+    repoURL: https://github.com/dhananjay-hub/app-of-apps-repo.git
     targetRevision: HEAD
     path: .
   syncPolicy:
